@@ -83,9 +83,10 @@ const Navbar = () => {
   };
 
   // Get initials from user name
-  const getInitials = (): string => {
-    if (!user) return '';
-    return `${user.firstName.charAt(0)}${user.lastName.charAt(0)}`;
+   const getInitials = (): string => {
+    const first = user?.firstName?.charAt(0) || '';
+    const last = user?.lastName?.charAt(0) || '';
+    return first + last;
   };
 
   // Check if a route is active
