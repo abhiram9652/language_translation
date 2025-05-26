@@ -14,7 +14,7 @@ const translationService = {
   // Translate text
   translate: async (text: string): Promise<string> => {
     try {
-      const response = await axios.post('http://localhost:8000/translate', { text });
+      const response = await axios.post('https://languagetranslation-production.up.railway.app/translate', { text });
       return response.data.translatedText;
     } catch (error) {
       console.error('Translation error:', error);
