@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(true);
   
   // Set up axios defaults using environment variable
- const apiUrl = 'https://server-production-3fa4.up.railway.app/api';
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
   axios.defaults.baseURL = apiUrl;
   axios.defaults.withCredentials = true;
   axios.defaults.headers.common['Content-Type'] = 'application/json';
